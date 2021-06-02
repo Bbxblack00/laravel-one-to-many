@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// use App\Employee
+
 class CreateEmployeesTable extends Migration
 {
     /**
@@ -16,9 +18,9 @@ class CreateEmployeesTable extends Migration
         Schema::create('employees', function (Blueprint $table) {
             $table->id();
 
-            $table->char('firstname', 128);
-            $table->char('lastname', 128);
-            
+            $table->string('firstname', 128);
+            $table->string('lastname', 128);
+            $table->integer('ral');
             $table->timestamps();
         });
     }

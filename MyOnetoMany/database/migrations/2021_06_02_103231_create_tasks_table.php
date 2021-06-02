@@ -4,6 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+// use App\Task
+
 class CreateTasksTable extends Migration
 {
     /**
@@ -17,8 +19,8 @@ class CreateTasksTable extends Migration
 
             $table->id();
 
-            $table->char('title', 60);
-            $table->text('description');
+            $table->string('title', 60);
+            $table->string('description');
             $table->bigInteger('employees_id') -> undigned() -> index();
             
             $table->timestamps();
