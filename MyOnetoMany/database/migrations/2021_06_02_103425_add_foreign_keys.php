@@ -13,12 +13,14 @@ class AddForeignKeys extends Migration
      */
     public function up()
     {
-        Schema::table('posts', function (Blueprint $table) {
-        
-            $table  ->foreign('task_id', 'post-task')
-                    ->references('id')
-                    ->on('task');
+        Schema::table('tasks', function (Blueprint $table) {
+
+            $table  -> foreign('employees_id', 'employeestasks')
+                    -> references('id')
+                    -> on('employees');
+
         });
+
     }
 
     /**
@@ -28,6 +30,8 @@ class AddForeignKeys extends Migration
      */
     public function down()
     {
-        //
+        Schema::table('tasks', function (Blueprint $table) {
+            $table -> dropForeign('employeestasks');
+        });
     }
 }
