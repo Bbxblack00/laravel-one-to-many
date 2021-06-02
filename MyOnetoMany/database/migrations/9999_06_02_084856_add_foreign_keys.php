@@ -15,9 +15,9 @@ class AddForeignKeys extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
         
-            $table  ->foreign('user_id')
+            $table  ->foreign('task_id', 'post-task')
                     ->references('id')
-                    ->on('users');
+                    ->on('task');
         });
     }
 

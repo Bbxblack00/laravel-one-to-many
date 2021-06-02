@@ -17,7 +17,7 @@ class CreateTask extends Migration
             $table->id();
             $table->char('title', 60);
             $table->text('description');
-            $table->bigInteger('tag_id') -> unsigned() -> index();
+            $table->bigInteger('task_id') -> unsigned() -> index();
             $table->timestamps();
         });
     }
