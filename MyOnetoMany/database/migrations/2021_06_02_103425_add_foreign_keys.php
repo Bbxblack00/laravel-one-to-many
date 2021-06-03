@@ -15,7 +15,7 @@ class AddForeignKeys extends Migration
     {
         Schema::table('tasks', function (Blueprint $table) {
 
-            $table  -> foreign('employees_id', 'employeestasks')
+            $table  -> foreign('employee_id', 'employeestasks')
                     -> references('id')
                     -> on('employees');
 

@@ -21,7 +21,8 @@ class CreateTasksTable extends Migration
 
             $table->string('title', 60);
             $table->string('description');
-            $table->bigInteger('employees_id') -> undigned() -> index();
+            // $table->bigInteger('employee_id') -> undigned() -> index();
+            $table->foreignId('employee_id')->constrained();
             
             $table->timestamps();
 
